@@ -18,16 +18,16 @@
  
  ### Policies
  policy_AgaPolicyGeneAssimilation:0 "Gene Assimilation"
- policy_AgaPolicyGeneAssimilation_desc:0 "Biodiversity of pops may contribute to empire grows, and also may hinder economic optimization. We can decide whether assimilate genes of sub-species or protect biodiversity.\n"
+ policy_AgaPolicyGeneAssimilation_desc:0 "Biodiversity of pops may contribute to empire growth, and also may hinder economic optimization. We can decide whether to assimilate genes of sub-species or protect biodiversity.\n"
  AgaPolicyGeneAssimilationForbidden:0 "Unexecuted"
  AgaPolicyGeneAssimilationForbidden_name:1 "$AgaPolicyGeneAssimilationForbidden$"
- AgaPolicyGeneAssimilationForbidden_desc:0 "Does not gene assimilation for protection of biodiversity."
+ AgaPolicyGeneAssimilationForbidden_desc:0 "Does not perform gene assimilation for protection of biodiversity."
  AgaPolicyGeneAssimilationAllowed:0 "Executed"
  AgaFlagGeneAssimilationAllowed_name:1 "$AgaPolicyGeneAssimilationAllowed$"
- AgaPolicyGeneAssimilationAllowed_desc:0 "Assimilate all sub-species to the one last modified among this species group. However, the pops will NOT be assimilate until any sub-species in this species group is manually modified once.\n\n$AgaPolicyGeneAssimilationEffectDesc$"
+ AgaPolicyGeneAssimilationAllowed_desc:0 "Assimilate all sub-species to the one last modified among this species group. However, the pops will NOT be assimilated until any sub-species in this species group is manually modified once.\n\n$AgaPolicyGeneAssimilationEffectDesc$"
  AgaPolicyGeneAssimilationForced:0 "Full Executed"
  AgaFlagGeneAssimilationForced_name:1 "$AgaPolicyGeneAssimilationForced$"
- AgaPolicyGeneAssimilationForced_desc:0 "Assimilate all sub-species to the sub-species last modified among this species group. The pops will be assimilate to random sub-species if no sub-species in this species group have modified manually.\n\n$AgaPolicyGeneAssimilationEffectDesc$"
+ AgaPolicyGeneAssimilationForced_desc:0 "Assimilate all sub-species to the sub-species last modified among this species group. The pops will be assimilated to most populous sub-species if no sub-species in this species group have been modified manually.\n\n$AgaPolicyGeneAssimilationEffectDesc$"
  
  AgaPolicyGeneAssimilationFailText:0 "\n\n£trigger_no£ §RMonthly income of £society_research£ $society_research$ must be at least 100.§!"
  AgaPolicyGeneAssimilationEffectDesc:0 "§HThe assimilation will start automatically if this policy is accepted.§! (At most 3 £pops£ $POPS$ per month)"

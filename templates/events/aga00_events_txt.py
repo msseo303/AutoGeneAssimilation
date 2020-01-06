@@ -1,65 +1,47 @@
 from templates.utils import settings, templater
 
 species_selector = """
-		{if_statement} = {{
-			limit = {{
-				root = {{
-					count_owned_pops = {{
-						count >= {count}
-						limit = {{
-							is_being_purged = no
-							AgaTriggerPotentialSpecies = yes
-							OR = {{
-								is_same_species = prev
-								is_subspecies = prev
-							}}
-							NOT = {{
-								root = {{
-									any_owned_pop_species = {{
-										is_same_species = prevprev
-										has_species_flag = AgaFlagGeneAssimilationStandardSpecies@root
-									}}
-								}}
-							}}
-						}}
-					}}
-				}}
-			}}
-			root = {{
-				random_owned_pop_species = {{
-					limit = {{
-						count_pops = {{
+			{if_statement} = {{
+				limit = {{
+					root = {{
+						count_owned_pops = {{
 							count >= {count}
 							limit = {{
 								is_being_purged = no
-								AgaTriggerPotentialSpecies = yes
 								OR = {{
-									is_same_species = prevprev
-									is_subspecies = prevprev
+									is_same_species = prev
+									is_subspecies = prev
 								}}
-								NOT = {{
-									root = {{
-										any_owned_pop_species = {{
-											is_same_species = prevprev
-											has_species_flag = AgaFlagGeneAssimilationStandardSpecies@root
-										}}
+							}}
+						}}
+					}}
+				}}
+				root = {{
+					random_owned_pop_species = {{
+						limit = {{
+							count_pops = {{
+								count >= {count}
+								limit = {{
+									is_being_purged = no
+									OR = {{
+										is_same_species = prevprev
+										is_subspecies = prevprev
 									}}
 								}}
 							}}
 						}}
-					}}
-					root = {{
-						### Sets flags to all species once and then 0112 sifts out flags for unsuitable species.
-						every_owned_pop_species = {{
-							limit = {{
-								is_same_species = prevprev
+						root = {{
+							### Sets flags to all species once and then 0112 sifts out flags for unsuitable species.
+							every_owned_pop_species = {{
+								limit = {{
+									is_same_species = prevprevprevprev
+								}}
+								set_species_flag = AgaFlagGeneAssimilationStandardSpecies@root
 							}}
-							set_species_flag = AgaFlagGeneAssimilationStandardSpecies@root
 						}}
 					}}
 				}}
-			}}
-		}}"""
+			}}"""
 
 
 def process(publish_dir):

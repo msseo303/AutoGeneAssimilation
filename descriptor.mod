@@ -5,4 +5,5 @@ tags = {
 }
 
 picture = "thumbnail.png"
+remote_file_id="1962029890"
 supported_version = "2.5.*"

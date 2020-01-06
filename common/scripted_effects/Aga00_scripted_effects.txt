@@ -1,4 +1,3 @@
-
 ########################################
 ########################################
 #####                              #####
@@ -8,7 +7,6 @@
 #####                              #####
 ########################################
 ########################################
-
 ### Scope: country
 AgaEffectClearGeneAssimilationModifier = {
 	remove_modifier = AgaModifierGeneAssimilated_0a
@@ -22,8 +20,14 @@ AgaEffectClearGeneAssimilationModifier = {
 AgaEffectInitializationVariables = {
 	set_country_flag = AgaFlagModActivatedCountry
 	AgaEffectClearGeneAssimilationModifier = yes
-	set_variable = { which = AgaVarGeneAssimilationProcessed value = 0 }
-	set_variable = { which = AgaVarGeneAssimilationCapacity value = 0 }
+	set_variable = {
+		which = AgaVarGeneAssimilationProcessed
+		value = 0
+	}
+	set_variable = {
+		which = AgaVarGeneAssimilationCapacity
+		value = 0
+	}
 }
 
 ### Scope: root/this = country
@@ -33,25 +37,56 @@ AgaEffectAddGeneAssimilationDummyModifier = {
 			NOR = {
 				AND = {
 					has_policy_flag = AgaFlagGeneAssimilationForced
-					any_owned_pop_species = { 
+					any_owned_pop_species = {
 						root = {
 							any_owned_pop_species = {
 								is_same_species = prevprev
-								NOT = { is_exact_same_species = prevprev }
+								NOT = {
+									is_exact_same_species = prevprev
+								}
 								AgaTriggerPotentialSpecies = yes
 							}
 						}
 					}
 				}
-				any_owned_pop_species = { AgaTriggerGeneAssimilationStandardSpecies = yes }
+				any_owned_pop_species = {
+					AgaTriggerGeneAssimilationStandardSpecies = yes
+				}
 			}
 		}
-		add_modifier = { modifier = AgaModifierGeneAssimilated_0a days = -1 }		## Assimilation Has Finished
-	} else_if = {
-		limit = { has_monthly_income = { resource = society_research value >= @AgaConstSocietyResearchForGeneAssimilation_3P } }
-		add_modifier = { modifier = AgaModifierGeneAssimilated_3 days = -1 }
-	} else_if = {
-		limit = { has_monthly_income = { resource = society_research value >= @AgaConstSocietyResearchForGeneAssimilation_2P } }
-		add_modifier = { modifier = AgaModifierGeneAssimilated_2 days = -1 }
-	} else = { add_modifier = { modifier = AgaModifierGeneAssimilated_1 days = -1 } }
+		add_modifier = {
+			modifier = AgaModifierGeneAssimilated_0a
+			days = -1
+		}		## Assimilation Has Finished
+	}
+	else_if = {
+		limit = {
+			has_monthly_income = {
+				resource = society_research
+				value >= @AgaConstSocietyResearchForGeneAssimilation_3P
+			}
+		}
+		add_modifier = {
+			modifier = AgaModifierGeneAssimilated_3
+			days = -1
+		}
+	}
+	else_if = {
+		limit = {
+			has_monthly_income = {
+				resource = society_research
+				value >= @AgaConstSocietyResearchForGeneAssimilation_2P
+			}
+		}
+		add_modifier = {
+			modifier = AgaModifierGeneAssimilated_2
+			days = -1
+		}
+	}
+	else = {
+		add_modifier = {
+			modifier = AgaModifierGeneAssimilated_1
+			days = -1
+		}
+	}
 }

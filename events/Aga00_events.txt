@@ -122,7 +122,7 @@ country_event = {
 			AgaEffectClearGeneAssimilationModifier = yes
 			set_policy = {
 				policy = AgaPolicyGeneAssimilation
-				option = AgaPolicyGeneAssimilationForbid				## Legacy: remove_country_flag = AgaFlagCountryAssimilateGene
+				option = AgaPolicyGeneAssimilationForbidden
 				cooldown = no
 			}
 		}
@@ -161,7 +161,8 @@ country_event = {
 			add_modifier = {
 				modifier = AgaModifierGeneAssimilated_0b
 				days = -1
-			}			## Lack of Society Research
+			}
+			## Lack of Society Research
 		}
 		else = {
 			### Check Society Research, Set Capacity
@@ -232,6 +233,7 @@ country_event = {
 					root = {
 						random_owned_pop = {
 							limit = {
+								is_being_purged = no
 								species = {
 									is_same_species = prevprevprev
 									NOT = {
@@ -298,7 +300,8 @@ country_event = {
 					modifier = AgaModifierGeneAssimilated_0a
 					days = -1
 				}
-			}			## Assimilation Has Finished (Backup Code)
+			}
+			## Assimilation Has Finished (Backup Code)
 		}
 	}
 }
@@ -391,6 +394,7 @@ country_event = {
 					count_owned_pops = {
 						count >= 5000
 						limit = {
+							is_being_purged = no
 							AgaTriggerPotentialSpecies = yes
 							OR = {
 								is_same_species = prev
@@ -414,6 +418,7 @@ country_event = {
 						count_pops = {
 							count >= 5000
 							limit = {
+								is_being_purged = no
 								AgaTriggerPotentialSpecies = yes
 								OR = {
 									is_same_species = prevprev
@@ -445,7 +450,8 @@ country_event = {
 		### END TEMPLATE:species_selector ###	
 		country_event = {
 			id = AgaEvent.0121
-		}		## Re-trigger this event for next species since random_owned_pop_species is used, but not every_.
+		}
+		## Re-trigger this event for next species since random_owned_pop_species is used, but not every_.
 	}
 }
 
@@ -803,7 +809,8 @@ country_event = {
 				}
 				country_event = {
 					id = AgaEvent.0122
-				}				## Re-trigger this event for next species since random_owned_pop_species is used, but not every_.
+				}
+				## Re-trigger this event for next species since random_owned_pop_species is used, but not every_.
 			}
 		}
 	}

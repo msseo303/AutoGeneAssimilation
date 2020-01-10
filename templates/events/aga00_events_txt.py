@@ -1,47 +1,47 @@
-from templates.utils import settings, templater
+from templates.utils import settings, templater, helpers
 
-species_selector = """
-			{if_statement} = {{
-				limit = {{
-					root = {{
-						count_owned_pops = {{
-							count >= {count}
-							limit = {{
+species_selector = helpers.prepare_for_format("""
+			[if_statement] = {
+				limit = {
+					root = {
+						count_owned_pops = {
+							count >= [count]
+							limit = {
 								is_being_purged = no
-								OR = {{
+								OR = {
 									is_same_species = prev
 									is_subspecies = prev
-								}}
-							}}
-						}}
-					}}
-				}}
-				root = {{
-					random_owned_pop_species = {{
-						limit = {{
-							count_pops = {{
-								count >= {count}
-								limit = {{
+								}
+							}
+						}
+					}
+				}
+				root = {
+					random_owned_pop_species = {
+						limit = {
+							count_pops = {
+								count >= [count]
+								limit = {
 									is_being_purged = no
-									OR = {{
+									OR = {
 										is_same_species = prevprev
 										is_subspecies = prevprev
-									}}
-								}}
-							}}
-						}}
-						root = {{
+									}
+								}
+							}
+						}
+						root = {
 							### Sets flags to all species once and then 0112 sifts out flags for unsuitable species.
-							every_owned_pop_species = {{
-								limit = {{
+							every_owned_pop_species = {
+								limit = {
 									is_same_species = prevprevprevprev
-								}}
+								}
 								set_species_flag = AgaFlagGeneAssimilationStandardSpecies@root
-							}}
-						}}
-					}}
-				}}
-			}}"""
+							}
+						}
+					}
+				}
+			}""")
 
 
 def process(publish_dir):

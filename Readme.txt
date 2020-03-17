@@ -1,6 +1,9 @@
 [h1]Load Order[/h1]
 Not important.
 
+[h1]Older Versions[/h1]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=]For 2.5[/url]
+
 [h1]About[/h1]
 99.9% of the work was done by the original author. This is just a continuation of the mod whose author has abandoned it. Check it out [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1840010432]here.[/url]
 

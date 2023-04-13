@@ -9,8 +9,8 @@ species_selector = helpers.prepare_for_format("""
 							limit = {
 								is_being_purged = no
 								OR = {
-									is_same_species = prev
-									is_subspecies = prev
+									is_same_species = prevprev
+									is_subspecies = prevprev
 								}
 							}
 						}
@@ -24,8 +24,8 @@ species_selector = helpers.prepare_for_format("""
 								limit = {
 									is_being_purged = no
 									OR = {
-										is_same_species = prevprev
-										is_subspecies = prevprev
+										is_same_species = prevprevprev
+										is_subspecies = prevprevprev
 									}
 								}
 							}

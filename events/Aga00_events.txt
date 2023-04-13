@@ -408,8 +408,8 @@ country_event = {
 							limit = {
 								is_being_purged = no
 								OR = {
-									is_same_species = prev
-									is_subspecies = prev
+									is_same_species = prevprev
+									is_subspecies = prevprev
 								}
 							}
 						}
@@ -423,8 +423,8 @@ country_event = {
 								limit = {
 									is_being_purged = no
 									OR = {
-										is_same_species = prevprev
-										is_subspecies = prevprev
+										is_same_species = prevprevprev
+										is_subspecies = prevprevprev
 									}
 								}
 							}
